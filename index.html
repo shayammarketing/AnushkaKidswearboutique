@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=3059a493-3c9e-4d2e-92b0-b62cb35e5139
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SKQ STYLISH KIDS OUTFIT</title>
+    <link rel="icon" href="assets/3082.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        :root {
+            --gold: #b78935;
+            --dark: #171717;
+            --muted: #666;
+            --bg: #faf9f6;
+            --line: #e8e4dc
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: #222
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        .top {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 8px;
+            font-size: 12px
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px 5%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800
+        }
+
+        .logo img {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            object-fit: cover
+        }
+
+        .logo span {
+            font-family: Georgia;
+            font-size: 18px
+        }
+
+        .search {
+            flex: 1;
+            max-width: 650px;
+            display: flex
+        }
+
+        .search input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px
+        }
+
+        .iconbtn,
+        .btn {
+            border: 0;
+            border-radius: 8px;
+            padding: 10px 13px;
+            background: #eee
+        }
+
+        .dark {
+            background: #111;
+            color: #fff
+        }
+
+        .gold {
+            background: var(--gold);
+            color: #fff
+        }
+
+        .wa {
+            background: #178b46;
+            color: #fff
+        }
+
+        .hero {
+            padding: 34px 5%;
+            background: linear-gradient(120deg, #fff, #f3ead8);
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            align-items: center
+        }
+
+        .hero h1 {
+            font: 700 42px Georgia;
+            margin: 0 0 10px
+        }
+
+        .hero p {
+            color: #555
+        }
+
+        .hero img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover
+        }
+
+        .offers {
+            display: flex;
+            gap: 10px;
+            overflow: auto;
+            padding: 14px 5%;
+            background: #fff;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .offer {
+            min-width: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center
+        }
+
+        .offer b {
+            display: block;
+            font-size: 18px
+        }
+
+        .toolbar {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .cats button {
+            margin: 3px
+        }
+
+        .grid {
+            padding: 0 5% 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative
+        }
+
+        .heart {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border: 0;
+            background: #fff;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            z-index: 2
+        }
+
+        .mainpic {
+            height: 270px;
+            background: #eee
+        }
+
+        .mainpic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .thumbs {
+            display: flex;
+            gap: 5px;
+            padding: 7px;
+            overflow: auto
+        }
+
+        .thumbs img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border: 2px solid transparent;
+            border-radius: 6px
+        }
+
+        .thumbs img.active {
+            border-color: var(--gold)
+        }
+
+        .info {
+            padding: 13px
+        }
+
+        .name {
+            font-weight: 700;
+            min-height: 40px
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: 800;
+            margin: 8px 0
+        }
+
+        .old {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 13px;
+            margin-right: 7px
+        }
+
+        .select,
+        .input,
+        textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            margin: 6px 0
+        }
+
+        .offerselect {
+            border: 2px solid var(--gold)
+        }
+
+        .card .btn {
+            width: 100%;
+            margin-top: 7px
+        }
+
+        .footer {
+            background: #151515;
+            color: #ddd;
+            padding: 35px 5%;
+            text-align: center
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #0008;
+            z-index: 50;
+            padding: 20px;
+            overflow: auto
+        }
+
+        .modal.open {
+            display: block
+        }
+
+        .box {
+            background: #fff;
+            max-width: 700px;
+            margin: 30px auto;
+            border-radius: 14px;
+            padding: 20px;
+            position: relative
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 12px;
+            border: 0;
+            background: none;
+            font-size: 25px
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .order {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 10px 0
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 8px;
+            border-radius: 20px;
+            background: #eee;
+            font-size: 12px
+        }
+
+        .danger {
+            color: #a22
+        }
+
+        .qr {
+            max-width: 260px;
+            display: block;
+            margin: 10px auto;
+            border: 1px solid #ddd;
+            padding: 5px
+        }
+
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: #777
+        }
+
+        @media(max-width:750px) {
+            .header {
+                flex-wrap: wrap
+            }
+            .search {
+                order: 3;
+                flex-basis: 100%;
+                max-width: none
+            }
+            .actions {
+                margin-left: auto
+            }
+            .hero h1 {
+                font-size: 30px
+            }
+            .hero img {
+                width: 110px;
+                height: 110px
+            }
+            .row {
+                grid-template-columns: 1fr
+            }
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+                padding-left: 3%;
+                padding-right: 3%
+            }
+            .mainpic {
+                height: 230px
+            }
+            .logo span {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top" id="topbar">🎁 Open Box Delivery • 10 Days Return & Exchange • 2–3 Days Fast Delivery</div>
+    <header class="header">
+        <div class="logo"><img src="assets/3082.jpg"><span id="brand">SKQ STYLISH KIDS OUTFIT</span></div>
+        <div class="search"><input id="search" placeholder="Search kids dresses..." oninput="render()"></div>
+        <div class="actions">
+            <button class="iconbtn" onclick="openWishlist()">❤️ <span id="wishCount">0</span></button>
+            <button class="iconbtn" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+            <button class="iconbtn" id="accountBtn" onclick="openAccount()">Login</button>
+        </div>
+    </header>
+    <section class="hero">
+        <div>
+            <h1>Stylish Kids Collection</h1>
+            <p>Beautiful ethnic & festive outfits for little stars.</p><button class="btn dark" onclick="setCat('kids')">Shop Kids</button></div><img src="assets/3082.jpg"></section>
+    <div class="offers" id="offers"></div>
+    <div class="toolbar">
+        <div class="cats"><button class="btn dark" onclick="setCat('all')">All</button><button class="btn" onclick="setCat('kids')">Kids</button><button class="btn" onclick="setCat('women')">Women</button></div><select id="sort" class="input" style="max-width:220px" onchange="render()"><option value="new">Newest</option><option value="low">Price Low to High</option><option value="high">Price High to Low</option></select></div>
+    <main class="grid" id="grid"></main>
+    <footer class="footer"><b id="footerBrand">SKQ STYLISH KIDS OUTFIT</b>
+        <p id="footerText"></p>
+        <p>WhatsApp: <span id="footerWa">9983979331</span></p>
+    </footer>
+
+    <div class="modal" id="authModal">
+        <div class="box"><button class="close" onclick="closeM('authModal')">×</button>
+            <h2 id="authTitle">Login</h2><input class="input" id="authName" placeholder="Full Name" style="display:none"><input class="input" id="authPhone" placeholder="Phone" style="display:none"><input class="input" id="authEmail" placeholder="Email"><input class="input"
+                id="authPass" type="password" placeholder="Password"><button class="btn dark" style="width:100%" onclick="authSubmit()">Continue</button>
+            <p id="authMsg"></p><button class="btn" style="width:100%" onclick="toggleAuth()">Create account / Switch login</button></div>
+    </div>
+
+    <div class="modal" id="accountModal">
+        <div class="box"><button class="close" onclick="closeM('accountModal')">×</button>
+            <h2>My Account</h2>
+            <div id="accountBody"></div>
+        </div>
+    </div>
+    <div class="modal" id="wishlistModal">
+        <div class="box"><button class="close" onclick="closeM('wishlistModal')">×</button>
+            <h2>My Favourites ❤️</h2>
+            <div id="wishlistBody"></div>
+        </div>
+    </div>
+    <div class="modal" id="cartModal">
+        <div class="box"><button class="close" onclick="closeM('cartModal')">×</button>
+            <h2>Cart 🛒</h2>
+            <div id="cartBody"></div>
+            <div id="cartTotal"></div><button class="btn dark" style="width:100%;margin-top:10px" onclick="startCheckout()">Checkout</button></div>
+    </div>
+    <div class="modal" id="checkoutModal">
+        <div class="box"><button class="close" onclick="closeM('checkoutModal')">×</button>
+            <h2>Checkout</h2>
+            <div id="checkoutSummary"></div>
+            <div class="row"><input class="input" id="coName" placeholder="Full Name"><input class="input" id="coPhone" placeholder="Phone"></div><input class="input" id="coLine1" placeholder="Address">
+            <div class="row"><input class="input" id="coCity" placeholder="City"><input class="input" id="coState" placeholder="State"></div><input class="input" id="coPin" placeholder="Pincode">
+            <h3>Payment</h3>
+            <p><b id="payAmount"></b></p><img id="qr" class="qr" style="display:none">
+            <p id="upiText"></p><input class="input" id="utr" placeholder="UTR / Transaction Number"><input class="input" id="screenshot" type="file" accept="image/*"><button class="btn gold" style="width:100%" onclick="placeOrder()">Place Paid Order</button>
+            <button
+                class="btn wa" style="width:100%" onclick="whatsappCheckout()">Order on WhatsApp</button>
+                <p id="checkoutMsg"></p>
+        </div>
+    </div>
+    <div class="modal" id="ordersModal">
+        <div class="box"><button class="close" onclick="closeM('ordersModal')">×</button>
+            <h2>My Orders</h2>
+            <div id="ordersBody"></div>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://kthwoyrmsyhjyxsmnhti.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_HcbsCUL4YyD-IKyFGDQ9gw_FCn5kt3U';
+        const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        let products = [],
+            settings = {},
+            cart = JSON.parse(localStorage.getItem('skq_cart') || '[]'),
+            cat = 'all',
+            authMode = 'login',
+            user = null,
+            wishlist = new Set();
+
+        const money = n => '₹' + Number(n || 0).toLocaleString('en-IN');
+
+        function closeM(id) {
+            document.getElementById(id).classList.remove('open')
+        }
+
+        function openM(id) {
+            document.getElementById(id).classList.add('open')
+        }
+
+        function setCat(c) {
+            cat = c;
+            render()
+        }
+
+        function saveCart() {
+            localStorage.setItem('skq_cart', JSON.stringify(cart));
+            updateCounts()
+        }
+
+        function updateCounts() {
+            document.getElementById('cartCount').textContent = cart.reduce((a, x) => a + x.qty, 0);
+            document.getElementById('wishCount').textContent = wishlist.size
+        }
+
+        function offerList() {
+            return Array.isArray(settings.offers) ? settings.offers.sort((a, b) => a.qty - b.qty) : [{
+                qty: 1,
+                price: 590
+            }, {
+                qty: 2,
+                price: 980
+            }, {
+                qty: 3,
+                price: 1320
+            }, {
+                qty: 5,
+                price: 1650
+            }, {
+                qty: 8,
+                price: 2200
+            }]
+        }
+
+        function offerForQty(q) {
+            let best = null;
+            for (const o of offerList())
+                if (q >= o.qty) best = o;
+            return best || offerList()[0]
+        }
+
+        function offerPriceForQty(q) {
+            return offerForQty(q).price
+        }
+
+        function renderOffers() {
+            document.getElementById('offers').innerHTML = offerList().map(o => `<div class="offer"><b>BUY ${o.qty}</b>DRESS${o.qty>1?'ES':''}<br>${money(o.price)}</div>`).join('')
+        }
+
+        function imageFor(p, i = 0) {
+            return (p.image_urls && p.image_urls[i]) || 'assets/3082.jpg'
+        }
+
+        function render() {
+            const q = (document.getElementById('search').value || '').toLowerCase();
+            let arr = products.filter(p => (cat === 'all' || p.category === cat) && p.active && (p.name.toLowerCase().includes(q) || String(p.description || '').toLowerCase().includes(q)));
+            const sort = document.getElementById('sort').value;
+            if (sort === 'low') arr.sort((a, b) => a.price - b.price);
+            if (sort === 'high') arr.sort((a, b) => b.price - a.price);
+            document.getElementById('grid').innerHTML = arr.length ? arr.map(p => {
+                const wished = wishlist.has(p.id);
+                const imgs = p.image_urls || [];
+                return `<article class="card"><button class="heart" onclick="toggleWish('${p.id}')">${wished?'❤️':'♡'}</button>
+   <div class="mainpic"><img id="main-${p.id}" src="${imageFor(p)}" alt="${p.name}"></div>
+   ${imgs.length>1?`<div class="thumbs">${imgs.map((im,i)=>`<img class="${i===0?'active':''}" src="${im}" onclick="document.getElementById('main-${p.id}').src=this.src;this.parentElement.querySelectorAll('img').forEach(x=>x.classList.remove('active'));this.classList.add('active')">`).join('')}</div>`:''}
+   <div class="info"><div class="name">${p.name}</div><div class="price"><span class="old">${money(p.compare_at_price)}</span>${money(p.price)}</div>
+   <select class="select" id="size-${p.id}">${(p.sizes||[]).map(s=>`<option>${s}</option>`).join('')}</select>
+   <select class="select offerselect" id="offer-${p.id}">${offerList().map(o=>`<option value="${o.qty}">BUY ${o.qty} DRESS${o.qty>1?'ES':''} — ${money(o.price)}</option>`).join('')}</select>
+   <button class="btn dark" onclick="addOffer('${p.id}')">ADD OFFER TO CART</button>
+   <button class="btn wa" onclick="quickWhatsApp('${p.id}')">ORDER ON WHATSAPP</button></div></article>`
+            }).join('') : '<div class="empty" style="grid-column:1/-1">No products found.</div>';
+            updateCounts()
+        }
+
+        function addOffer(id) {
+            let q = Number(document.getElementById('offer-' + id).value),
+                size = document.getElementById('size-' + id).value;
+            let row = cart.find(x => x.id === id && x.size === size);
+            if (row) row.qty += q;
+            else cart.push({
+                id,
+                size,
+                qty: q
+            });
+            saveCart();
+            openCart()
+        }
+
+        function cartLines() {
+            return cart.map(c => ({ ...c,
+                p: products.find(p => p.id === c.id)
+            })).filter(x => x.p)
+        }
+
+        function cartQty() {
+            return cart.reduce((a, x) => a + x.qty, 0)
+        }
+
+        function cartTotal() {
+            return offerPriceForQty(cartQty())
+        }
+
+        function openCart() {
+            let lines = cartLines();
+            document.getElementById('cartBody').innerHTML = lines.length ? lines.map((x, i) => `<div class="order"><b>${x.p.name}</b><br>Size: ${x.size} • Qty: ${x.qty}<br>${money(x.p.price)} each <button class="btn" onclick="removeLine(${i})">Remove</button></div>`).join('') : '<div class="empty">Your cart is empty.</div>';
+            let o = offerForQty(cartQty());
+            document.getElementById('cartTotal').innerHTML = lines.length ? `<h3>Offer Applied: BUY ${o.qty} — ${money(o.price)}</h3><small>Final payment amount is based on total dress quantity.</small>` : '';
+            openM('cartModal')
+        }
+
+        function removeLine(i) {
+            let line = cartLines()[i];
+            cart = cart.filter(x => !(x.id === line.p.id && x.size === line.size));
+            saveCart();
+            openCart()
+        }
+        async function loadWishlist() {
+            if (!user) {
+                wishlist = new Set(JSON.parse(localStorage.getItem('skq_wish') || '[]'));
+                return
+            }
+            const {
+                data
+            } = await db.from('wishlist').select('product_id').eq('user_id', user.id);
+            wishlist = new Set((data || []).map(x => x.product_id))
+        }
+        async function toggleWish(id) {
+            if (!user) {
+                localStorage.setItem('skq_wish', JSON.stringify([...new Set([...wishlist, id])]));
+                wishlist.add(id);
+                updateCounts();
+                return
+            }
+            if (wishlist.has(id)) {
+                await db.from('wishlist').delete().eq('user_id', user.id).eq('product_id', id);
+                wishlist.delete(id)
+            } else {
+                await db.from('wishlist').insert({
+                    user_id: user.id,
+                    product_id: id
+                });
+                wishlist.add(id)
+            }
+            render()
+        }
+
+        function openWishlist() {
+            document.getElementById('wishlistBody').innerHTML = products.filter(p => wishlist.has(p.id)).map(p => `<div class="order"><b>${p.name}</b><br>${money(p.price)} <button class="btn" onclick="toggleWish('${p.id}');openWishlist()">Remove</button></div>`).join('') || '<div class="empty">No favourites yet.</div>';
+            openM('wishlistModal')
+        }
+
+        function toggleAuth() {
+            authMode = authMode === 'login' ? 'signup' : 'login';
+            document.getElementById('authTitle').textContent = authMode === 'login' ? 'Login' : 'Create Account';
+            document.getElementById('authName').style.display = authMode === 'login' ? 'none' : 'block';
+            document.getElementById('authPhone').style.display = authMode === 'login' ? 'none' : 'block'
+        }
+
+        function openAccount() {
+            if (!user) {
+                authMode = 'login';
+                toggleAuth();
+                toggleAuth();
+                openM('authModal');
+                return
+            }
+            document.getElementById('accountBody').innerHTML = `<p><b>${user.email}</b></p><button class="btn" onclick="openOrders()">My Orders</button> <button class="btn" onclick="signOut()">Logout</button>`;
+            openM('accountModal')
+        }
+        async function authSubmit() {
+            let email = authEmail.value.trim(),
+                pass = authPass.value;
+            if (authMode === 'signup') {
+                let {
+                    error
+                } = await db.auth.signUp({
+                    email,
+                    password: pass,
+                    options: {
+                        data: {
+                            full_name: authName.value,
+                            phone: authPhone.value
+                        }
+                    }
+                });
+                authMsg.textContent = error ? error.message : 'Account created. Check your email if confirmation is enabled.'
+            } else {
+                let {
+                    error
+                } = await db.auth.signInWithPassword({
+                    email,
+                    password: pass
+                });
+                authMsg.textContent = error ? error.message : 'Logged in';
+                if (!error) closeM('authModal')
+            }
+        }
+        async function signOut() {
+            await db.auth.signOut();
+            closeM('accountModal')
+        }
+        async function openOrders() {
+            if (!user) return;
+            closeM('accountModal');
+            let {
+                data
+            } = await db.from('orders').select('*,order_items(*)').eq('user_id', user.id).order('created_at', {
+                ascending: false
+            });
+            document.getElementById('ordersBody').innerHTML = (data || []).map(o => `<div class="order"><b>${o.order_no}</b><br>${new Date(o.created_at).toLocaleString()}<br>₹${o.offer_price||o.subtotal} • <span class="badge">${o.order_status}</span> • Payment: ${o.payment_status}<hr>${(o.order_items||[]).map(i=>`${i.product_name} × ${i.qty} (${i.size})`).join('<br>')}</div>`).join('') || '<div class="empty">No orders yet.</div>';
+            openM('ordersModal')
+        }
+        async function startCheckout() {
+            if (!cart.length) return;
+            closeM('cartModal');
+            if (!user) {
+                openM('authModal');
+                return
+            }
+            let o = offerForQty(cartQty());
+            document.getElementById('checkoutSummary').innerHTML = `<p><b>BUY ${o.qty} OFFER — ${money(o.price)}</b><br>Total dresses in cart: ${cartQty()}</p>`;
+            document.getElementById('payAmount').textContent = 'Pay exactly ' + money(o.price);
+            if (settings.qr_image_url) {
+                qr.src = settings.qr_image_url;
+                qr.style.display = 'block'
+            }
+            upiText.textContent = settings.upi_id ? 'UPI: ' + settings.upi_id : '';
+            openM('checkoutModal')
+        }
+        async function uploadScreenshot(file, orderId) {
+            if (!file) return '';
+            let path = `${user.id}/${orderId}-${Date.now()}.${file.name.split('.').pop()}`;
+            let {
+                error
+            } = await db.storage.from('payment-screenshots').upload(path, file, {
+                upsert: false
+            });
+            return error ? '' : path
+        }
+        async function placeOrder() {
+            if (!user) return;
+            let o = offerForQty(cartQty());
+            let shipping = {
+                full_name: coName.value,
+                phone: coPhone.value,
+                line1: coLine1.value,
+                city: coCity.value,
+                state: coState.value,
+                pincode: coPin.value
+            };
+            if (!shipping.full_name || !shipping.phone || !shipping.line1 || !shipping.city || !shipping.state || !shipping.pincode) {
+                checkoutMsg.textContent = 'Please fill all address fields.';
+                return
+            }
+            let {
+                data: ord,
+                error
+            } = await db.from('orders').insert({
+                user_id: user.id,
+                customer_name: shipping.full_name,
+                customer_phone: shipping.phone,
+                shipping_address: shipping,
+                subtotal: o.price,
+                offer_qty: o.qty,
+                offer_price: o.price,
+                payment_method: 'UPI',
+                payment_status: 'pending',
+                utr_no: utr.value
+            }).select().single();
+            if (error) {
+                checkoutMsg.textContent = error.message;
+                return
+            }
+            let items = cartLines().map(x => ({
+                order_id: ord.id,
+                product_id: x.p.id,
+                product_name: x.p.name,
+                size: x.size,
+                qty: x.qty,
+                unit_price: x.p.price,
+                image_url: imageFor(x.p)
+            }));
+            await db.from('order_items').insert(items);
+            let path = await uploadScreenshot(screenshot.files[0], ord.id);
+            await db.from('payments').insert({
+                order_id: ord.id,
+                user_id: user.id,
+                amount: o.price,
+                utr_no: utr.value,
+                screenshot_url: path,
+                status: 'pending'
+            });
+            if (path) await db.from('orders').update({
+                payment_screenshot_url: path
+            }).eq('id', ord.id);
+            cart = [];
+            saveCart();
+            checkoutMsg.textContent = 'Order placed! Payment will be verified by admin.';
+            setTimeout(() => closeM('checkoutModal'), 1200)
+        }
+
+        function quickWhatsApp(id) {
+            let p = products.find(x => x.id === id),
+                o = offerForQty(Number(document.getElementById('offer-' + id).value)),
+                size = document.getElementById('size-' + id).value;
+            let msg = `Hello ${settings.brand_name||'SKQ STYLISH KIDS OUTFIT'}, I want ${p.name}%0AOffer: BUY ${o.qty} — ${money(o.price)}%0ASize: ${size}`;
+            window.open('https://wa.me/' + String(settings.whatsapp_number || '9983979331').replace(/\D/g, '') + '?text=' + msg, '_blank')
+        }
+
+        function whatsappCheckout() {
+            if (!cart.length) return;
+            let o = offerForQty(cartQty());
+            let msg = `Hello ${settings.brand_name}, I want to order:%0A${cartLines().map(x=>x.p.name+' x '+x.qty+' Size '+x.size).join('%0A')}%0AOffer: BUY ${o.qty} — ${money(o.price)}`;
+            window.open('https://wa.me/' + String(settings.whatsapp_number || '9983979331').replace(/\D/g, '') + '?text=' + msg, '_blank')
+        }
+        async function init() {
+            const [{
+                data: pd
+            }, {
+                data: sd
+            }, {
+                data: session
+            }] = await Promise.all([db.from('products').select('*').eq('active', true).order('created_at', {
+                ascending: false
+            }), db.from('site_settings').select('*').eq('id', true).single(), db.auth.getSession()]);
+            products = pd || [];
+            settings = sd || {};
+            user = session.session ? .user || null;
+            await loadWishlist();
+            brand.textContent = settings.brand_name || 'SKQ STYLISH KIDS OUTFIT';
+            footerBrand.textContent = brand.textContent;
+            footerWa.textContent = settings.whatsapp_number || '9983979331';
+            footerText.textContent = [settings.open_box_text, settings.return_text, settings.delivery_text, settings.bill_text].filter(Boolean).join(' • ');
+            renderOffers();
+            render();
+            updateAccount();
+            db.auth.onAuthStateChange(async (_e, s) => {
+                user = s ? .user || null;
+                await loadWishlist();
+                updateAccount();
+                render()
+            })
+        }
+
+        function updateAccount() {
+            accountBtn.textContent = user ? 'My Account' : 'Login'
+        }
+        init();
+    </script>
+</body>
+
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="3059a493-3c9e-4d2e-92b0-b62cb35e5139" data-app-host="app.netlify.com"></script>
