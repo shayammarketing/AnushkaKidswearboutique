@@ -7,7 +7,7 @@
      like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=3059a493-3c9e-4d2e-92b0-b62cb35e5139
      Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>SKQ STYLISH KIDS OUTFIT</title>
+    <title>Anushka Kidswear Boutique</title>
     <link rel="icon" href="assets/3082.jpg">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
@@ -398,7 +398,7 @@
 <body>
     <div class="top" id="topbar">🎁 Open Box Delivery • 10 Days Return & Exchange • 2–3 Days Fast Delivery</div>
     <header class="header">
-        <div class="logo"><img src="assets/3082.jpg"><span id="brand">SKQ STYLISH KIDS OUTFIT</span></div>
+        <div class="logo"><img src="assets/3082.jpg"><span id="brand">Anushka Kidswear Boutique</span></div>
         <div class="search"><input id="search" placeholder="Search kids dresses..." oninput="render()"></div>
         <div class="actions">
             <button class="iconbtn" onclick="openWishlist()">❤️ <span id="wishCount">0</span></button>
@@ -414,9 +414,9 @@
     <div class="toolbar">
         <div class="cats"><button class="btn dark" onclick="setCat('all')">All</button><button class="btn" onclick="setCat('kids')">Kids</button><button class="btn" onclick="setCat('women')">Women</button></div><select id="sort" class="input" style="max-width:220px" onchange="render()"><option value="new">Newest</option><option value="low">Price Low to High</option><option value="high">Price High to Low</option></select></div>
     <main class="grid" id="grid"></main>
-    <footer class="footer"><b id="footerBrand">SKQ STYLISH KIDS OUTFIT</b>
+    <footer class="footer"><b id="footerBrand">Anushka Kidswear Boutique</b>
         <p id="footerText"></p>
-        <p>WhatsApp: <span id="footerWa">9983979331</span></p>
+        <p>WhatsApp: <span id="footerWa">8306171250</span></p>
     </footer>
 
     <div class="modal" id="authModal">
@@ -792,15 +792,15 @@
             let p = products.find(x => x.id === id),
                 o = offerForQty(Number(document.getElementById('offer-' + id).value)),
                 size = document.getElementById('size-' + id).value;
-            let msg = `Hello ${settings.brand_name||'SKQ STYLISH KIDS OUTFIT'}, I want ${p.name}%0AOffer: BUY ${o.qty} — ${money(o.price)}%0ASize: ${size}`;
-            window.open('https://wa.me/' + String(settings.whatsapp_number || '9983979331').replace(/\D/g, '') + '?text=' + msg, '_blank')
+            let msg = `Hello ${settings.brand_name||'Anushka Kidswear Boutique'}, I want ${p.name}%0AOffer: BUY ${o.qty} — ${money(o.price)}%0ASize: ${size}`;
+            window.open('https://wa.me/' + String(settings.whatsapp_number || '8306171250').replace(/\D/g, '') + '?text=' + msg, '_blank')
         }
 
         function whatsappCheckout() {
             if (!cart.length) return;
             let o = offerForQty(cartQty());
             let msg = `Hello ${settings.brand_name}, I want to order:%0A${cartLines().map(x=>x.p.name+' x '+x.qty+' Size '+x.size).join('%0A')}%0AOffer: BUY ${o.qty} — ${money(o.price)}`;
-            window.open('https://wa.me/' + String(settings.whatsapp_number || '9983979331').replace(/\D/g, '') + '?text=' + msg, '_blank')
+            window.open('https://wa.me/' + String(settings.whatsapp_number || '8306171250').replace(/\D/g, '') + '?text=' + msg, '_blank')
         }
         async function init() {
             const [{
@@ -816,9 +816,9 @@
             settings = sd || {};
             user = session.session ? .user || null;
             await loadWishlist();
-            brand.textContent = settings.brand_name || 'SKQ STYLISH KIDS OUTFIT';
+            brand.textContent = settings.brand_name || 'Anushka Kidswear Boutique';
             footerBrand.textContent = brand.textContent;
-            footerWa.textContent = settings.whatsapp_number || '9983979331';
+            footerWa.textContent = settings.whatsapp_number || '8306171250';
             footerText.textContent = [settings.open_box_text, settings.return_text, settings.delivery_text, settings.bill_text].filter(Boolean).join(' • ');
             renderOffers();
             render();
